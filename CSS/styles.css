@@ -1,0 +1,598 @@
+/* Basic reset and body styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    padding-top: 60px; /* Space for the sticky navbar */
+    background-color: #FFFFFF; /* Default background color, if necessary */
+}
+
+/* Styles for the Navbar */
+.navbar {
+    background-color: #344E41;
+    padding: 1em 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    position: fixed; /* Fixed at the top of the viewport */
+    width: 100%;
+    top: 0;
+    z-index: 1000; /* Ensures navbar stays on top of other content */
+}
+
+.logo img {
+    height: 50px; /* Adjust according to your logo */
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    padding: 0.5em 1em;
+    transition: color 0.3s;
+}
+
+.nav-link:hover, .nav-link:focus {
+    color: #FF9013;
+}
+
+.button-buy-ticket {
+    background-color: #FF9013;
+    border: none;
+    padding: 0.5em 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    color: white;
+}
+
+.button-buy-ticket:hover {
+    background-color: #e07c07; /* Darker shade for hover */
+}
+
+.hamburger, .cross {
+    display: none; /* Initially hide the hamburger and cross */
+    font-size: 2em;
+    cursor: pointer;
+}
+
+/* Home page specific styles */
+.home-container {
+    background: url('../assets/bgg.jpg') no-repeat center center fixed; /* Replace with your actual image path */
+    background-size: cover;
+    position: relative;
+    min-height: 100vh; /* Minimum height to cover the full viewport height */
+}
+
+.home-content {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%);
+    width: 80%;
+    color: white;
+}
+
+.home-content p, .home-content h1 {
+    margin: 20px 0;
+}
+
+.home-content p {
+    font-size: 1.5em;
+}
+
+.home-content h1 {
+    font-size: 3em;
+    font-weight: bold;
+}
+
+.button-buy-ticket.large {
+    padding: 0.8em 3em;
+    font-size: larger;
+    display: block; /* Ensures button takes the full width appropriate */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .home-content h1, .home-content p {
+        font-size: medium; /* Reduce font size for better readability on tablets */
+    }
+
+    .button-buy-ticket.large {
+        width: 50%; /* Full width for better mobile interaction */
+    }
+}
+
+@media (max-width: 640px) {
+    .menu {
+        display: none; /* Hide menu items */
+    }
+
+    .hamburger {
+        display: block; /* Show hamburger icon */
+    }
+
+    .menu.open {
+        display: flex; /* Show menu when 'open' */
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background-color: #344E41;
+    }
+
+    .cross {
+        display: none; /* Initially hide cross */
+    }
+
+    .cross.show {
+        display: block; /* Show cross when menu is open */
+        position: absolute;
+        right: 10px;
+        top: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .home-content h1, .home-content p {
+        text-align: center; /* Center text for mobile views */
+    }
+    .button-buy-ticket.large {
+        width: 100%; /* Full width for better mobile interaction */
+    }
+}
+
+
+
+
+/* About US*/
+
+.about-container {
+    display: flex;
+    
+    justify-content: space-between;
+    padding: 20px;
+    background-color: white;
+}
+
+
+.about-content {
+    width: 50%;
+    padding: 20px;
+}
+
+.about-content h2 {
+    font-size: 2em;
+    font-weight: bold;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.about-content p {
+    font-size: 1em;
+    text-align: justify;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .about-image img, .about-content {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-container {
+        flex-direction: column;
+    }
+
+    .about-image img {
+        width: auto; /* Adjust based on container width */
+        max-width: 100%; /* Ensures the image does not overflow the container */
+    }
+
+    .about-content {
+        width: 100%;
+    }
+
+}
+    
+
+/* Styles for the Experience Section */
+.experience-section {
+    background-color: #3A5A40;
+    padding-top: 40px;
+    padding-bottom: 80px;
+    text-align: center; /* Centers the text and content */
+    color: white;
+}
+
+.experience-section h2 {
+    margin-bottom: 40px; /* Spacing below the heading */
+    font-size: 2em;
+}
+
+.experience-images {
+    display: flex;
+    justify-content: center; /* Center the images in the row */
+    gap: 20px; /* Space between the images */
+}
+
+.experience-images img {
+    width: 18%; /* Each image takes up 30% of the container's width */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 5%;
+}
+
+.experience-images img:hover {
+    transform: scale(1.1); /* Slightly enlarge images on hover */
+    cursor: pointer; /* Change cursor to indicate interactivity */
+}
+
+/* Responsive adjustments for the Experience Section */
+@media (max-width: 768px) {
+    .experience-images img {
+        width: 15%; /* Slightly smaller images on tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    .experience-images {
+        flex-direction: column; /* Stack images vertically on mobile */
+    }
+
+    .experience-images img {
+        width: 60%; /* Larger images to fit the screen width */
+        margin: 10px auto; /* Center images with margin */
+    }
+
+    .experience-section h2{
+        font-size: large;
+    }
+}
+
+
+
+/* Animals */
+.animals-container {
+    text-align: center;
+    padding: 20px;
+    margin-top: 60px; /* Adjusting for fixed navbar */
+}
+
+.animals-container h2 {
+    color: #344E41;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.animals-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px; /* Clear separation */
+}
+
+.animal {
+    position: relative;
+    overflow: hidden;
+}
+
+.animal img {
+    width: 100%;
+    height: auto;
+    transform: scale(0.8);
+    transition: transform 0.3s ease-in-out, filter 0.3s ease;
+}
+
+.animal:hover img {
+    filter: brightness(50%);
+    transform: scale(0.85);
+}
+
+.animal span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 1.5em;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.animal:hover span {
+    opacity: 1;
+}
+
+.button-see-more {
+    padding: 15px 30px;
+    font-size: 1.5em;
+    background-color: #FF9013;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 30px;
+    transition: background-color 0.3s;
+}
+
+.button-see-more:hover {
+    background-color: #e07c07; /* Darker on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .animals-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .animals-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .animal img {
+        transform: scale(1);
+    }
+}
+
+
+
+/*Attractions*/
+
+.attractions-container {
+    margin-top: 5%;
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #588157; /* Rich green background */
+    color: white; /* Text color */
+    height: 25vh; /* Full viewport height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertically center content */
+    align-items: center; /* Horizontally center content */
+}
+
+.attractions-container h2 {
+    font-size: 2em; /* Bigger text size, not bold */
+    margin-bottom: 20px; /* Space between the headings */
+}
+
+.attractions-container h1 {
+    font-size: 2.5em; /* Even bigger text size */
+    font-weight: bold; /* Bold text */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .attractions-container h2 {
+        font-size: 1.5em; /* Smaller text size on tablets */
+    }
+
+    .attractions-container h1 {
+        font-size: 2em; /* Adjust h1 size on tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    .attractions-container h2 {
+        font-size: 1.2em; /* Smaller text size on mobile */
+    }
+
+    .attractions-container h1 {
+        font-size: 1.7em; /* Adjust h1 size on mobile */
+    }
+}
+
+
+.workshop-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Align items at the start to prevent stretching */
+    overflow: hidden; /* Prevents overflow of content outside the bounds */
+    max-height: 600px; /* Maximum height set for the desktop view */
+}
+
+.workshop-left, .workshop-right {
+    width: 50%;
+}
+
+.workshop-left {
+    background-color: white; /* Optional for contrast */
+    padding: 30px; /* Increased padding for better layout */
+    height: auto; /* Adjust height automatically based on content */
+    overflow-y: auto; /* Allows scrolling within the left part if content overflows */
+}
+
+.workshop-left h2 {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: black;
+}
+
+.workshop-left .date {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+.workshop-left ul {
+    list-style-type: none; /* Remove default list styling */
+    padding: 0;
+    margin-bottom: 20px; /* Adds bottom margin for spacing before the button */
+}
+
+.workshop-left ul li {
+    padding-left: 30px; /* Space for custom icon */
+    position: relative;
+    line-height: 1.8; /* Increased line height for readability */
+}
+
+.workshop-left ul li::before {
+    content: '\2713'; /* Unicode checkmark */
+    color: green; /* Green color for the icon */
+    font-weight: bold; /* Make it stand out */
+    position: absolute;
+    left: 0; /* Position at the start of the padding area */
+}
+
+.workshop-right img {
+    display: block;
+    width: 100%;
+    height: auto; /* Adjust height automatically */
+    max-height: 100%; /* Prevent the image from exceeding the container height */
+    object-fit: cover; /* Ensure the image covers the area without distortion */
+}
+
+.button-sign-up {
+    padding: 15px 30px;
+    font-size: 1.5em;
+    background-color: #588157;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.button-sign-up:hover {
+    background-color: #466A47;
+}
+
+/* Responsive adjustments for tablet view */
+@media (max-width: 768px) {
+    .workshop-container {
+        flex-direction: column; /* Continue to stack sections vertically */
+        max-height: none; /* Adjust or remove max height if needed */
+    }
+
+    .workshop-left, .workshop-right {
+        width: 100%; /* Full width for each section to utilize available space */
+    }
+
+    .workshop-left h2 {
+        font-size: 1.8em; /* Smaller than original for better fit on tablets */
+    }
+
+    .workshop-left .date {
+        font-size: 1.2em; /* Reduce the date size for better spacing */
+        margin-bottom: 10px; /* Tighter spacing between date and content */
+    }
+
+    .workshop-left ul {
+        margin-bottom: 15px; /* Slightly reduce the bottom margin for better layout */
+    }
+
+    .workshop-left ul li {
+        font-size: 0.9em; /* Smaller font size for list items */
+        padding-left: 25px; /* Reduce padding to accommodate smaller screen widths */
+    }
+
+    .workshop-left ul li::before {
+        /* Adjust the size and position of the custom icon slightly if necessary */
+        left: 5px; /* Closer to the text start */
+        font-size: 1.1em; /* Smaller checkmark if it looks too large */
+    }
+
+    .button-sign-up {
+        padding: 12px 25px; /* Slightly smaller padding for buttons */
+        font-size: 1.3em; /* Reduce the button font size */
+    }
+}
+
+@media (max-width: 768px) {
+    .workshop-container {
+        flex-direction: column; /* Ensure column layout persists for all mobile sizes */
+    }
+
+    .workshop-left, .workshop-right {
+        order: 1; /* Ensures text content always appears first */
+    }
+
+    .workshop-right {
+        order: 2; /* Ensures image content follows the text */
+    }
+
+    .workshop-left {
+        padding: 20px; /* Adjust padding for better spacing in a smaller viewport */
+        h2 {
+            font-size: 1.7em; /* Slightly smaller heading size for improved readability on mobile */
+        }
+    }
+
+    .workshop-left .date, .workshop-left ul li {
+        font-size: 1.2em; /* Smaller text size for date and list items */
+    }
+}
+
+
+
+.footer-container {
+    background-color: #344E41;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    font-family: Arial, sans-serif;
+}
+
+.footer-container h2 {
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.contact-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    font-size: 1em;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.contact-item img {
+    height: 20px;
+    width: 20px;
+    margin-right: 10px;
+}
+
+@media (max-width: 768px) {
+    .contact-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-item {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-container h2 {
+        font-size: 1.5em;
+    }
+
+    .contact-item {
+        font-size: 1em;
+    }
+}
+
+/* Copyright styling */
+copyright {
+    font-size: 0.8em;
+    margin-top: 20px;
+}
