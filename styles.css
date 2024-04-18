@@ -66,7 +66,7 @@ body {
 
 /* Home page specific styles */
 .home-container {
-    background: url('../assets/bgg.jpg') no-repeat center center fixed; /* Replace with your actual image path */
+    background: url('bgg.jpg') no-repeat center center fixed; /* Replace with your actual image path */
     background-size: cover;
     position: relative;
     min-height: 100vh; /* Minimum height to cover the full viewport height */
